@@ -44,20 +44,10 @@ def get_vector_store(text_chunks):
 def get_conversational_chain():
 
     prompt_template = """
-    You are a helpful financial analyst. \
-
-    Your job is to read multiple annual financial statements from different banks and tell me the following key informations:\
-    1. Key Financial metrics \
-    2. Profitability metrics \
-    3. Executive Officers \
-    4. Board of Directors \
-    5. Shareholder's Composition \
-    6. Key Policies and Initiatives \
-    7. Strength, Weakness, Opportunities, and Threats (SWOT) \
-    8. Positive and Negative impact on performances from internal and external changes for each banking entity over the years \
+    You are a helpful financial analyst. You are familiar with multiple financial ratios and concepts.
     
-    Answer the question as detailed as possible from the provided context, make sure to provide all the details. \ 
-    If the answer is not in provided context just say, "answer is not available in the context". \ 
+    You will read multiple financial statement from annual reports and answer the question as detailed as possible from the provided context.
+    Make sure to provide all the details. If the answer is not in provided context just say, "answer is not available in the context".
     Don't provide the wrong answer\n\n
     Context:\n {context}?\n
     Question: \n{question}\n
